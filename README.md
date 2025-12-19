@@ -10,10 +10,11 @@ Create a `.env` file in the project root and fill in the following fields.
 
 NGINX CONFIG
 
-NGINX_HOST=your_domain_or_public_ip
-UPSTREAM_HOST=myswapi #better don`t change
-UPSTREAM_PORT=3000 #better don`t change
+NGINX_HOST=your_domain_or_public_ip /n
+UPSTREAM_HOST=myswapi #better don`t change /n
+UPSTREAM_PORT=3000 #better don`t change /n
 
+----------------------------
 ----------------------------
 
 MYSWAPI CONFIG
@@ -42,6 +43,7 @@ JWT
 
 JWT_SECRET=your_jwt_secret
 
+----------------------------
 ----------------------------
 
 POSTGRES CONFIG
