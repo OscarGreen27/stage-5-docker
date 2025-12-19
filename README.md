@@ -1,35 +1,66 @@
-stage-5-docker
-How to run it
-1. Create a .env file with fields
-#####nginx-config#####
-NGINX_HOST=#your domain or puplic ip
-UPSTREAM_HOST=myswapi #by default
-UPSTREAM_PORT=3000 #by defaul
+# stage-5-docker
 
+## How to run
 
+### 1. Create `.env` file
 
-#####myswapi-config#####
-#db config
-DB_TYPE=postgres #the database image is based on postgresql, better don`t change it
-DB_HOST=myswapi-db #by default
-DB_PORT=5432 #by defaul
-DB_USERNAME=postgres #by default
-DB_PASSWORD=#make password for db user
-DB_NAME=starwars #by default
+Create a `.env` file in the project root and fill in the following fields.
 
-#s3 config
-S3_REGION=#your AWS regin
-S3_BUCKET_NAME=#your bucket name
-S3_ACCESS_KEY=#your access key
-S3_SECRET_ACCESS_KEY=#youe secret access key
+----------------------------
 
-#jwt
-JWT_SECRET=#secret from JWT
+NGINX CONFIG
 
-#####postgres-config#####
-POSTGRES_PASSWORD=#password that will be created for the database user when creating the container, use the same value here and in DB_PASSWORD
+NGINX_HOST=your_domain_or_public_ip
+UPSTREAM_HOST=myswapi #better don`t change
+UPSTREAM_PORT=3000 #better don`t change
 
-2. docker compose up -d
+----------------------------
 
+MYSWAPI CONFIG
 
-!!!nginx listens on port 80, you can change this to ./templates/default.conf.template
+DATABASE
+
+DB_TYPE=postgres #better don`t change
+DB_HOST=myswapi-db #better don`t change
+DB_PORT=5432 #better don`t change
+DB_USERNAME=postgres #better don`t change
+DB_PASSWORD=your_db_password
+DB_NAME=starwars #better don`t change
+
+----------------------------
+
+S3 (AWS)
+
+S3_REGION=your_aws_region
+S3_BUCKET_NAME=your_bucket_name
+S3_ACCESS_KEY=your_access_key
+S3_SECRET_ACCESS_KEY=your_secret_access_key
+
+----------------------------
+
+JWT
+
+JWT_SECRET=your_jwt_secret
+
+----------------------------
+
+POSTGRES CONFIG
+
+POSTGRES_PASSWORD=your_db_password
+
+IMPORTANT:
+POSTGRES_PASSWORD must be the same as DB_PASSWORD
+
+----------------------------
+
+### 2. Run containers
+
+docker compose up -d
+
+----------------------------
+
+NOTES
+
+- Nginx listens on port 80 by default
+- You can change the port in:
+  ./templates/default.conf.template
