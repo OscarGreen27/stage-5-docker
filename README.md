@@ -10,9 +10,9 @@ Create a `.env` file in the project root and fill in the following fields.
 
 NGINX CONFIG
 
-- NGINX_HOST=your_domain_or_public_ip  
-- UPSTREAM_HOST=myswapi #better don`t change  
-- UPSTREAM_PORT=3000 #better don`t change  
+NGINX_HOST=your_domain_or_public_ip  
+UPSTREAM_HOST=myswapi #better don`t change  
+UPSTREAM_PORT=3000 #better don`t change  
 
 ----------------------------
 ----------------------------
@@ -21,12 +21,12 @@ MYSWAPI CONFIG
 
 DATABASE
 
-DB_TYPE=postgres #better don`t change  
-DB_HOST=myswapi-db #better don`t change  
-DB_PORT=5432 #better don`t change  
-DB_USERNAME=postgres #better don`t change  
+DB_TYPE=postgres #better dont change  
+DB_HOST=myswapi-db #better dont change  
+DB_PORT=5432 #better dont change  
+DB_USERNAME=postgres #better dont change  
 DB_PASSWORD=your_db_password  
-DB_NAME=starwars #better don`t change  
+DB_NAME=starwars #better dont change  
 
 ----------------------------
 
