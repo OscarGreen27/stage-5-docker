@@ -11,8 +11,8 @@ Create a `.env` file in the project root and fill in the following fields.
 NGINX CONFIG
 
 NGINX_HOST=your_domain_or_public_ip  
-UPSTREAM_HOST=myswapi #better don`t change  
-UPSTREAM_PORT=3000 #better don`t change  
+UPSTREAM_HOST=myswapi #better dont change  
+UPSTREAM_PORT=3000 #better dont change  
 
 ----------------------------
 ----------------------------
