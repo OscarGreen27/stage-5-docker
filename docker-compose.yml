@@ -1,0 +1,37 @@
+services:
+  myswapi:
+    image: andriivoitenko/nest-project:latest
+    container_name: myswapi
+    env_file:
+      - ./.env
+    networks:
+      - my_network
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    env_file:
+      - ./.env
+    networks:
+      - my_network
+    volumes:
+      - ./templates:/etc/nginx/templates
+    depends_on:
+      - myswapi
+    restart: unless-stopped
+
+  myswapi-db:
+    image: andriivoitenko/myswapi-db
+    container_name: myswapi-db
+    env_file:
+      - ./.env
+    networks:
+      - my_network
+    restart: unless-stopped
+
+networks:
+  my_network:
+    driver: bridge

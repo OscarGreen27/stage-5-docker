@@ -1,0 +1,13 @@
+server {
+    listen 80;
+    server_name ${NGINX_HOST};
+
+    location = / {
+        return 301 /api-docs;
+}
+
+    location / {
+        proxy_pass http://${UPSTREAM_HOST}:${UPSTREAM_PORT};
+}
+
+}
